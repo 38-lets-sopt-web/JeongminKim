@@ -1,0 +1,44 @@
+/* 포토 덤프 스타일 */
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 200px 200px 200px;
+  gap: 16px;
+  padding: 16px;
+}
+
+.photo-item {
+  background-color: var(--color-blue-300);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.col-span-3 {
+  grid-column: span 3;
+}
+
+.row-span-2 {
+  grid-row: span 2;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-item img:hover {
+  transform: scale(1.5);
+}

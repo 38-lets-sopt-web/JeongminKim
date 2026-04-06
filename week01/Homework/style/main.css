@@ -1,0 +1,18 @@
+#main-content {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-blue-100);
+  min-height: 100vh;
+  align-items: flex-start;
+}
+
+nav {
+  width: 200px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 64px;
+}
+
+section {
+  flex: 1;
+}
