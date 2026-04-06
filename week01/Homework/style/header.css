@@ -1,6 +1,8 @@
 /* 헤더 스타일 */
-
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -22,13 +24,13 @@ header > img:first-child:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-header > img:nth-child(3):hover {
-  transform: translateY(-2px);
-  transition: transform 0.2s ease;
+header a img {
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
-
-/* 헤더의 텍스트 스타일 */
-
+header a:hover img {
+  transform: translateY(-5px);
+  filter: invert(1); /* 검정 → 흰색 */
+}
 header div {
   display: flex;
   flex-direction: column;
