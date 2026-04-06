@@ -1,0 +1,48 @@
+/* 포토 앨범 스타일 */
+
+.photo-album {
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+.album-track {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  width: max-content;
+  animation: scroll-left 10s linear infinite;
+}
+
+/* 마우스 올리면 멈춤 */
+.album-track:hover {
+  animation-play-state: paused;
+}
+
+/* 6개의 앨범이 모두 지나가도록 설정 (150px + 16px) * 6 */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * (150px + 16px) * 6));
+  }
+}
+
+.album-item {
+  flex-shrink: 0;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.album-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.album-item img:hover {
+  transform: scale(1.5);
+}

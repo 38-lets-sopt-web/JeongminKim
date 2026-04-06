@@ -15,4 +15,11 @@ nav {
 
 section {
   flex: 1;
+  min-width: 0;
+}
+
+h3 {
+  margin: 8px 16px 0 16px;
+  font-size: 18px;
+  color: var(--color-text);
 }
