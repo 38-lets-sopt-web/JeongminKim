@@ -34,34 +34,36 @@
           <li><a href="#photo-dump">포토덤프</a></li>
           <li><a href="#photo-album">사진첩</a></li>
           <li><a href="#likes">좋아하는 것</a></li>
-          <li><a href="#to-web">To.웹왔니</a></li>
+          <li><a href="#web-watni">To.웹왔니</a></li>
         </ul>
       </nav>
       <section>
         <!-- 포토덤프 영역 -->
-        <h3 id="photo-dump">📸 포토 덤프</h3>
-        <div class="photo-grid">
-          <div class="photo-item">
-            <img src="./img/Photo01.jpeg" alt="photo" />
+        <section class="photo-dump-section">
+          <h3 id="photo-dump">📸 포토 덤프</h3>
+          <div class="photo-grid">
+            <div class="photo-item">
+              <img src="./img/Photo01.jpeg" alt="photo" />
+            </div>
+            <div class="photo-item">
+              <img src="./img/Photo02.jpeg" alt="photo" />
+            </div>
+            <div class="photo-item col-span-2">
+              <img src="./img/Photo03.jpeg" alt="photo" />
+            </div>
+            <div class="photo-item col-span-3 row-span-2">
+              <img src="./img/Photo04.jpeg" alt="photo" />
+            </div>
+            <div class="photo-item">
+              <img src="./img/Photo05.jpeg" alt="photo" />
+            </div>
+            <div class="photo-item">
+              <img src="./img/Photo06.jpeg" alt="photo" />
+            </div>
           </div>
-          <div class="photo-item">
-            <img src="./img/Photo02.jpeg" alt="photo" />
-          </div>
-          <div class="photo-item col-span-2">
-            <img src="./img/Photo03.jpeg" alt="photo" />
-          </div>
-          <div class="photo-item col-span-3 row-span-2">
-            <img src="./img/Photo04.jpeg" alt="photo" />
-          </div>
-          <div class="photo-item">
-            <img src="./img/Photo05.jpeg" alt="photo" />
-          </div>
-          <div class="photo-item">
-            <img src="./img/Photo06.jpeg" alt="photo" />
-          </div>
-        </div>
+        </section>
         <!-- 사진첩 영역 -->
-        <div class="photo-album">
+        <section class="photo-album">
           <h3 id="photo-album">📸 좋아하는 것</h3>
           <div class="album-track">
             <div class="album-item">
@@ -101,17 +103,17 @@
               <img src="./img/photo-album06.jpg" alt="좋아하는 것" />
             </div>
           </div>
-        </div>
+        </section>
         <!-- 좋아하는 것 영역 -->
-        <div>
+        <section>
           <h3 id="likes">📸 내 관심사</h3>
           <div class="likes-grid">
             <div class="likes-card">
               <img src="./img/like01.jpg" alt="유우시" />
               <p class="likes-title">✨ 유우시</p>
               <div class="likes-buttons">
-                <button class="btn-like">좋아요</button>
-                <button class="btn-dislike">싫어요</button>
+                <button type="button" class="btn-like">좋아요</button>
+                <button type="button" class="btn-dislike">싫어요</button>
               </div>
             </div>
 
@@ -119,8 +121,8 @@
               <img src="./img/like02.jpg" alt="가나디" />
               <p class="likes-title">✨ 가나디</p>
               <div class="likes-buttons">
-                <button class="btn-like">좋아요</button>
-                <button class="btn-dislike">싫어요</button>
+                <button type="button" class="btn-like">좋아요</button>
+                <button type="button" class="btn-dislike">싫어요</button>
               </div>
             </div>
 
@@ -128,8 +130,8 @@
               <img src="./img/like03.jpg" alt="누누씨" />
               <p class="likes-title">✨ 누누씨</p>
               <div class="likes-buttons">
-                <button class="btn-like">좋아요</button>
-                <button class="btn-dislike">싫어요</button>
+                <button type="button" class="btn-like">좋아요</button>
+                <button type="button" class="btn-dislike">싫어요</button>
               </div>
             </div>
 
@@ -137,8 +139,8 @@
               <img src="./img/like04.jpg" alt="음악" />
               <p class="likes-title">✨ 음악</p>
               <div class="likes-buttons">
-                <button class="btn-like">좋아요</button>
-                <button class="btn-dislike">싫어요</button>
+                <button type="button" class="btn-like">좋아요</button>
+                <button type="button" class="btn-dislike">싫어요</button>
               </div>
             </div>
 
@@ -146,8 +148,8 @@
               <img src="./img/like05.jpg" alt="떡볶이" />
               <p class="likes-title">✨ 떡볶이</p>
               <div class="likes-buttons">
-                <button class="btn-like">좋아요</button>
-                <button class="btn-dislike">싫어요</button>
+                <button type="button" class="btn-like">좋아요</button>
+                <button type="button" class="btn-dislike">싫어요</button>
               </div>
             </div>
 
@@ -155,8 +157,8 @@
               <img src="./img/like06.jpg" alt="뜨개질" />
               <p class="likes-title">✨ 뜨개질</p>
               <div class="likes-buttons">
-                <button class="btn-like">좋아요</button>
-                <button class="btn-dislike">싫어요</button>
+                <button type="button" class="btn-like">좋아요</button>
+                <button type="button" class="btn-dislike">싫어요</button>
               </div>
             </div>
 
@@ -164,18 +166,18 @@
               <img src="./img/like07.jpg" alt="베이킹" />
               <p class="likes-title">✨ 베이킹</p>
               <div class="likes-buttons">
-                <button class="btn-like">좋아요</button>
-                <button class="btn-dislike">싫어요</button>
+                <button type="button" class="btn-like">좋아요</button>
+                <button type="button" class="btn-dislike">싫어요</button>
               </div>
             </div>
           </div>
-        </div>
+        </section>
         <!-- To.웹왔니 영역 -->
-        <div class="web-watni">
+        <section class="web-watni">
           <h3 id="web-watni">🌐 To.웹왔니</h3>
           <p>웹왔니 반가워요-!!</p>
           <p>38기 잘부탁드려요~~ 화이팅!!</p>
-        </div>
+        </section>
       </section>
     </main>
     <!-- 푸터 영역 -->

@@ -1,6 +1,6 @@
 /* 푸터 스타일 */
 footer {
-  background-color: var(--color-primary);
+  background-color: var(--color-blue-500);
   color: var(--color-blue-100);
   text-align: center;
   padding: 8px;

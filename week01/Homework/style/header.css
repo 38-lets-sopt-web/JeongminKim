@@ -29,7 +29,7 @@ header a img {
 }
 header a:hover img {
   transform: translateY(-5px);
-  filter: invert(1); /* 검정 → 흰색 */
+  filter: invert(1);
 }
 header div {
   display: flex;

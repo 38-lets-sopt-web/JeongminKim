@@ -1,3 +1,4 @@
+/* 메인 콘텐츠 스타일 */
 #main-content {
   display: flex;
   flex-direction: row;
@@ -22,4 +23,5 @@ h3 {
   margin: 8px 16px 0 16px;
   font-size: 18px;
   color: var(--color-text);
+  scroll-margin-top: 80px;
 }
