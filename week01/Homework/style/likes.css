@@ -1,0 +1,91 @@
+/* 좋아하는 것 스타일 */
+
+/* 반응형 */
+
+.likes-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+@media (max-width: 1200px) {
+  .likes-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .likes-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .likes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 카드 스타일 */
+
+.likes-card {
+  background-color: var(--color-yellow-100);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.likes-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.likes-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.likes-title {
+  margin: 8px 12px 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--color-text);
+}
+
+.likes-buttons {
+  display: flex;
+  gap: 8px;
+  padding: 8px 12px 12px;
+}
+
+.btn-like,
+.btn-dislike {
+  flex: 1;
+  padding: 6px 0;
+  border: none;
+  border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-like {
+  background-color: var(--color-blue-300);
+  color: var(--color-text);
+}
+
+.btn-dislike {
+  background-color: var(--color-yellow-300);
+  color: var(--color-text);
+}
+
+.btn-like:hover {
+  background-color: var(--color-blue-500);
+}
+
+.btn-dislike:hover {
+  background-color: var(--color-yellow-500);
+}
