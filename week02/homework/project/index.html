@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>정민이의 가계부</title>
+    <link rel="stylesheet" href="style/index.css" />
+  </head>
+  <body>
+    <header>
+      <button onclick="location.reload()">🔄</button>
+      <h1>정민이의 가계부</h1>
+      <p>작고 소중한..용돈</p>
+    </header>
+    <div class="search-filter">
+      <h2>검색 필터</h2>
+
+      <!-- 1행: 제목 -->
+      <div class="filter-row">
+        <label>제목</label>
+        <input type="text" placeholder="내역을 입력하세요" />
+      </div>
+
+      <!-- 2행: 유형, 카테고리, 결제수단 -->
+      <div class="filter-row">
+        <label>유형</label>
+        <select>
+          <option>전체</option>
+        </select>
+
+        <label>카테고리</label>
+        <select>
+          <option>전체</option>
+        </select>
+
+        <label>결제수단</label>
+        <select>
+          <option>전체</option>
+        </select>
+      </div>
+
+      <!-- 3행: 버튼 -->
+      <div class="filter-buttons">
+        <button type="button">적용</button>
+        <button type="button">초기화</button>
+      </div>
+    </div>
+  </body>
+</html>
