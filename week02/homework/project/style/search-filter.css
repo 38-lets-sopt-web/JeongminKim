@@ -1,0 +1,45 @@
+.search-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  background-color: var(--color-gray-50);
+  border-radius: var(--radius-md);
+}
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-row input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--color-gray-500);
+  border-radius: var(--radius-sm);
+}
+
+.filter-row select {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid var(--color-gray-500);
+  border-radius: var(--radius-sm);
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.filter-buttons button {
+  flex: 1;
+  padding: 12px;
+  background-color: var(--color-gray-900);
+  color: var(--color-gray-100);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}

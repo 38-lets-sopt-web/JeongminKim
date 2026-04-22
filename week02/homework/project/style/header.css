@@ -1,5 +1,9 @@
 header {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   align-items: center;
   padding: 8px 32px;
   background-color: var(--color-primary);

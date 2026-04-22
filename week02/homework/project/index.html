@@ -12,38 +12,89 @@
       <h1>정민이의 가계부</h1>
       <p>작고 소중한..용돈</p>
     </header>
-    <div class="search-filter">
-      <h2>검색 필터</h2>
 
-      <!-- 1행: 제목 -->
+    <!-- 검색 필터 섹션 -->
+    <div class="search-filter">
+      <h3>검색 필터</h3>
+
       <div class="filter-row">
         <label>제목</label>
         <input type="text" placeholder="내역을 입력하세요" />
       </div>
 
-      <!-- 2행: 유형, 카테고리, 결제수단 -->
       <div class="filter-row">
         <label>유형</label>
         <select>
-          <option>전체</option>
+          <option value="전체">전체</option>
+          <option value="수입">수입</option>
+          <option value="지출">지출</option>
         </select>
 
         <label>카테고리</label>
         <select>
-          <option>전체</option>
+          <option value="전체">전체</option>
+          <option value="식비">식비</option>
+          <option value="교통">교통</option>
+          <option value="문화">문화</option>
+          <option value="생활">생활</option>
+          <option value="월급">월급</option>
+          <option value="기타">기타</option>
+          <option value="정신유지비">정신유지비</option>
         </select>
 
         <label>결제수단</label>
         <select>
-          <option>전체</option>
+          <option value="전체">전체</option>
+          <option value="현금">현금</option>
+          <option value="신용카드">신용카드</option>
+          <option value="체크카드">체크카드</option>
+          <option value="기타">기타</option>
         </select>
       </div>
 
-      <!-- 3행: 버튼 -->
       <div class="filter-buttons">
         <button type="button">적용</button>
         <button type="button">초기화</button>
       </div>
     </div>
+    <!-- 거래 내역 섹션 -->
+    <div class="transaction-section">
+      <!-- 상단 컨트롤 -->
+      <div class="table-controls">
+        <select class="sort-select">
+          <option>날짜 내림차순</option>
+          <option>날짜 오름차순</option>
+        </select>
+        <div class="table-buttons">
+          <button type="button" class="btn-delete">선택 삭제</button>
+          <button type="button" class="btn-add">추가</button>
+        </div>
+      </div>
+
+      <!-- 테이블 -->
+      <table>
+        <thead>
+          <tr>
+            <th><input type="checkbox" id="check-all" /></th>
+            <th>제목</th>
+            <th>금액</th>
+            <th>날짜</th>
+            <th>카테고리</th>
+            <th>결제수단</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-body"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2"><strong>total</strong></td>
+            <td id="total-amount" colspan="4"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <!-- TODO: 모달 -->
+
+    <script type="module" src="js/index.js"></script>
   </body>
 </html>
