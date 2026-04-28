@@ -1,7 +1,10 @@
 @import "tailwindcss";
 
+html {
+  font-size: 62.5%;
+}
+
 @theme {
-  /* colors */
   --color-ivory-100: #f3e9d7;
   --color-ivory-200: #e8d1a7;
 
@@ -13,4 +16,7 @@
   --color-main-900: #3b2a22;
 
   --color-secondary: #9d9167;
+
+  --color-red: #ab3131;
+  --color-green: #799163;
 }
