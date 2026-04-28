@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+  /* colors */
+  --color-ivory-100: #f3e9d7;
+  --color-ivory-200: #e8d1a7;
+
+  --color-main-300: #d6bfa6;
+  --color-main-400: #b08968;
+  --color-main-600: #7a553a;
+  --color-main-700: #743014;
+  --color-main-800: #442d1c;
+  --color-main-900: #3b2a22;
+
+  --color-secondary: #9d9167;
+}
