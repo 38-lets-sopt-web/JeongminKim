@@ -16,6 +16,8 @@
   --color-yellow-300: #fff4ab;
   --color-yellow-500: #ffe285;
 
+  --color-red-500: #e53935;
+
   --color-primary: var(--color-blue-700);
   --color-background: var(--color-blue-100);
   --color-text: var(--color-gray-900);

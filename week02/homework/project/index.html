@@ -4,34 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>정민이의 가계부</title>
-    <link rel="stylesheet" href="style/index.css" />
+    <link rel="stylesheet" href="styles/index.css" />
   </head>
   <body>
     <header>
-      <button onclick="location.reload()">🔄</button>
+      <button type="button" onclick="location.reload()">🔄</button>
       <h1>정민이의 가계부</h1>
       <p>작고 소중한..용돈</p>
     </header>
-
     <!-- 검색 필터 섹션 -->
     <div class="search-filter">
       <h3>검색 필터</h3>
 
       <div class="filter-row">
-        <label>제목</label>
-        <input type="text" placeholder="내역을 입력하세요" />
+        <label for="filter-title">제목</label>
+        <input type="text" id="filter-title" placeholder="내역을 입력하세요" />
       </div>
 
       <div class="filter-row">
-        <label>유형</label>
-        <select>
+        <label for="filter-type">유형</label>
+        <select id="filter-type">
           <option value="전체">전체</option>
           <option value="수입">수입</option>
           <option value="지출">지출</option>
         </select>
 
-        <label>카테고리</label>
-        <select>
+        <label for="filter-category">카테고리</label>
+        <select id="filter-category">
           <option value="전체">전체</option>
           <option value="식비">식비</option>
           <option value="교통">교통</option>
@@ -42,8 +41,8 @@
           <option value="정신유지비">정신유지비</option>
         </select>
 
-        <label>결제수단</label>
-        <select>
+        <label for="filter-payment">결제수단</label>
+        <select id="filter-payment">
           <option value="전체">전체</option>
           <option value="현금">현금</option>
           <option value="신용카드">신용카드</option>

@@ -85,7 +85,7 @@ tbody td a {
 }
 
 .negative {
-  color: #e53935;
+  color: var(--color-red-500);
   font-weight: bold;
 }
 

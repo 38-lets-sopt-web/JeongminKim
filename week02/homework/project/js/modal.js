@@ -7,19 +7,46 @@ function closeModal(backdropId) {
   document.getElementById(backdropId).classList.remove("active");
 }
 
+// 추가 모달 폼 데이터 수집
+function getAddFormData() {
+  return {
+    title: document.getElementById("add-title").value.trim(),
+    type: document.getElementById("add-type").value,
+    amount: document.getElementById("add-amount").value,
+    date: document.getElementById("add-date").value,
+    category: document.getElementById("add-category").value,
+    payment: document.getElementById("add-payment").value,
+  };
+}
+
+// 추가 모달 폼 초기화
+function resetAddForm() {
+  const fields = [
+    "add-title",
+    "add-type",
+    "add-amount",
+    "add-date",
+    "add-category",
+    "add-payment",
+  ];
+  fields.forEach((id) => {
+    document.getElementById(id).value = "";
+  });
+}
+
 // 상세 모달 : 열기
 export function openDetail(id) {
   const transactions = getTransactions();
-  const t = transactions.find((t) => t.id === id);
-  if (!t) return;
+  const transaction = transactions.find((transaction) => transaction.id === id);
+  if (!transaction) return;
 
-  document.querySelector(".detail-title").textContent = t.title;
-  document.querySelector(".detail-date").textContent = t.date;
-  document.querySelector(".detail-category").textContent = t.category;
-  document.querySelector(".detail-payment").textContent = t.payment;
+  document.querySelector(".detail-title").textContent = transaction.title;
+  document.querySelector(".detail-date").textContent = transaction.date;
+  document.querySelector(".detail-category").textContent = transaction.category;
+  document.querySelector(".detail-payment").textContent = transaction.payment;
 
   const amountEl = document.querySelector(".detail-amount");
-  const numAmount = Number(t.amount);
+  const numAmount = Number(transaction.amount);
 
   amountEl.textContent = `${
     numAmount > 0 ? "+" : ""
@@ -38,12 +65,7 @@ export function openAdd() {
 
 // 추가 모달 : 데이터 수집 및 저장
 export function submitAdd() {
-  const title = document.getElementById("add-title").value.trim();
-  const type = document.getElementById("add-type").value;
-  const amount = document.getElementById("add-amount").value;
-  const date = document.getElementById("add-date").value;
-  const category = document.getElementById("add-category").value;
-  const payment = document.getElementById("add-payment").value;
+  const { title, type, amount, date, category, payment } = getAddFormData();
 
   if (!title || !type || !amount || !date || !category || !payment) {
     alert("모든 항목을 입력해주세요!");
@@ -63,13 +85,7 @@ export function submitAdd() {
   saveTransactions(transactions);
   render(getFilteredData(transactions));
   closeModal("add-backdrop");
-
-  document.getElementById("add-title").value = "";
-  document.getElementById("add-type").value = "";
-  document.getElementById("add-amount").value = "";
-  document.getElementById("add-date").value = "";
-  document.getElementById("add-category").value = "";
-  document.getElementById("add-payment").value = "";
+  resetAddForm();
 }
 
 // 모달 이벤트 초기화
@@ -89,7 +105,6 @@ export function initModalEvents() {
   document.getElementById("add-backdrop").addEventListener("click", (e) => {
     if (e.target === e.currentTarget) closeModal("add-backdrop");
   });
-  // 추가 모달 열기 및 제출
   document.querySelector(".btn-add").addEventListener("click", openAdd);
   document.getElementById("btn-submit").addEventListener("click", submitAdd);
 }

@@ -23,10 +23,13 @@ export function initEvents(transactions) {
 
   // 선택 삭제
   document.querySelector(".btn-delete").addEventListener("click", () => {
+    if (!confirm("선택한 항목을 삭제할까요?")) return;
     const checked = [...document.querySelectorAll("tbody input:checked")].map(
       (el) => Number(el.value)
     );
-    transactions = transactions.filter((t) => !checked.includes(t.id));
+    transactions = transactions.filter(
+      (transaction) => !checked.includes(transaction.id)
+    );
     saveTransactions(transactions);
     render(getFilteredData(transactions));
   });
