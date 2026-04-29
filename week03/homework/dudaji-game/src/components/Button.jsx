@@ -1,8 +1,10 @@
-function Button({ label, onClick, className = "" }) {
+import { cn } from "@/utils";
+
+function Button({ label, onClick, className }) {
   return (
     <button
       onClick={onClick}
-      className={`w-full h-10 rounded-2xl font-medium text-sm ${className}`}
+      className={cn("w-full h-16 rounded-lg font-medium text-sm", className)}
     >
       {label}
     </button>
