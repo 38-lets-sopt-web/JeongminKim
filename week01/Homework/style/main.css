@@ -1,0 +1,27 @@
+/* 메인 콘텐츠 스타일 */
+#main-content {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--color-blue-100);
+  min-height: 100vh;
+  align-items: flex-start;
+}
+
+nav {
+  width: 200px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 64px;
+}
+
+div {
+  flex: 1;
+  min-width: 0;
+}
+
+h3 {
+  margin: 8px 16px 0 16px;
+  font-size: 18px;
+  color: var(--color-text);
+  scroll-margin-top: 80px;
+}

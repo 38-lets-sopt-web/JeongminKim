@@ -1,0 +1,19 @@
+/* To.웹왔니 스타일 */
+.web-watni {
+  margin: 16px;
+  padding: 16px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+.web-watni p {
+  position: relative;
+}
+
+.web-watni p::before {
+  content: "📢 ";
+}
+
+.web-watni p::after {
+  content: " ✅";
+}
