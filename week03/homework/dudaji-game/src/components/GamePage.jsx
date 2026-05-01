@@ -1,4 +1,4 @@
-import { InfoCard, GameBoard } from "./";
+import { InfoCard, GameBoard, Modal } from "./";
 import { useGame } from "@/hooks";
 
 function GamePage() {
@@ -26,6 +26,9 @@ function GamePage() {
       <div className="w-[100rem]">
         <GameBoard gameState={gameState} gameActions={gameActions} />
       </div>
+      {gameState.isModalOpen && (
+        <Modal score={gameState.score} onClose={gameActions.stop} />
+      )}
     </div>
   );
 }

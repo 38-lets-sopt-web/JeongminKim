@@ -5,3 +5,4 @@ export { default as GamePage } from "./GamePage";
 export { default as RankingPage } from "./RankingPage";
 export { default as GameBoard } from "./GameBoard";
 export { default as MoleCellItem } from "./MoleCellItem";
+export { default as Modal } from "./Modal";

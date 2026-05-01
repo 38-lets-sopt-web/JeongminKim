@@ -10,9 +10,10 @@ const variants = {
 function Button({ label, onClick, variant = "primary", className }) {
   return (
     <button
+      type="button"
       onClick={onClick}
       className={cn(
-        "w-full py-[0.8rem] rounded-full font-medium text-2xl transition-colors",
+        "w-full py-[0.8rem] rounded-full font-medium text-2xl transition-colors cursor-pointer",
         variants[variant],
         className
       )}

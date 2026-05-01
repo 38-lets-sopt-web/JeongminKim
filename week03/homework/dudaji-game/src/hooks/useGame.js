@@ -16,6 +16,7 @@ function useGame() {
   const [fail, setFail] = useState(0);
   const [message, setMessage] = useState("게임을 시작하세요!");
   const [cells, setCells] = useState(initCells(LEVEL_CONFIG[1].size));
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const timer = useTimer();
   const mole = useMole();
@@ -35,6 +36,7 @@ function useGame() {
     timer.stop();
     mole.stop();
     setIsPlaying(false);
+    setIsModalOpen(false);
     setTimeLeft(config.time);
     setScore(0);
     setSuccess(0);
@@ -49,7 +51,7 @@ function useGame() {
     timer.start(setTimeLeft, () => {
       mole.stop();
       setIsPlaying(false);
-      setMessage("게임 종료!");
+      setIsModalOpen(true);
     });
     mole.start(config.size, setCells);
   };
@@ -61,6 +63,7 @@ function useGame() {
     setTimeLeft(LEVEL_CONFIG[num].time);
     setCells(initCells(LEVEL_CONFIG[num].size));
   };
+
   return {
     gameState: {
       level,
@@ -72,12 +75,14 @@ function useGame() {
       message,
       cells,
       config,
+      isModalOpen,
     },
     gameActions: {
       start,
       stop: reset,
       handleCellClick,
       handleLevelChange,
+      closeModal: () => setIsModalOpen(false),
     },
   };
 }
