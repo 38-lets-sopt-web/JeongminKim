@@ -1,4 +1,5 @@
-import { InfoCard, GameBoard, Modal } from "./";
+import { InfoCard, Modal } from "@/components/common";
+import GameBoard from "@/components/game/GameBoard";
 import { useGame } from "@/hooks";
 
 function GamePage() {

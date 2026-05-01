@@ -1,4 +1,4 @@
-import { Button } from ".";
+import { Button } from "@/components/common";
 
 function Header({ activeTab, onTabChange }) {
   return (

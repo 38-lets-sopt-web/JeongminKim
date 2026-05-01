@@ -1,4 +1,5 @@
-import { Button, MoleCellItem } from "./";
+import { Button } from "@/components/common";
+import MoleCellItem from "@/components/game/MoleCellItem";
 
 function GameBoard({ gameState, gameActions }) {
   const { level, isPlaying, cells, config } = gameState;

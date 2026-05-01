@@ -1,5 +1,5 @@
 import { createPortal } from "react-dom";
-import { Button } from "./";
+import { Button } from ".";
 
 function Modal({ score, onClose }) {
   return createPortal(
