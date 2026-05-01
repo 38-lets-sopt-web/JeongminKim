@@ -1,12 +1,22 @@
-import { useState } from "react";
 import { InfoCard, GameBoard } from "./";
+import { useGame } from "@/hooks";
 
 function GamePage() {
-  const [timeLeft, setTimeLeft] = useState(20.0);
-  const [score, setScore] = useState(0);
-  const [success, setSuccess] = useState(0);
-  const [fail, setFail] = useState(0);
-  const [message, setMessage] = useState("안내 메시지");
+  const {
+    level,
+    isPlaying,
+    timeLeft,
+    score,
+    success,
+    fail,
+    message,
+    cells,
+    config,
+    start,
+    stop,
+    handleCellClick,
+    handleLevelChange,
+  } = useGame();
 
   return (
     <div className="flex gap-4 p-4">
@@ -20,7 +30,16 @@ function GamePage() {
         <InfoCard label={message} value="" />
       </div>
       <div className="w-[100rem]">
-        <GameBoard />
+        <GameBoard
+          level={level}
+          isPlaying={isPlaying}
+          cells={cells}
+          config={config}
+          onStart={start}
+          onStop={stop}
+          onCellClick={handleCellClick}
+          onLevelChange={handleLevelChange}
+        />
       </div>
     </div>
   );
