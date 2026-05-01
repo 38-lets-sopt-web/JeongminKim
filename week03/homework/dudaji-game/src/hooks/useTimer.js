@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { TIMER_INTERVAL } from "@/constants/game";
 
 function useTimer() {
   const timerRef = useRef(null);
@@ -13,7 +14,7 @@ function useTimer() {
         }
         return prev - 1;
       });
-    }, 1000);
+    }, TIMER_INTERVAL);
   };
 
   const stop = () => clearInterval(timerRef.current);

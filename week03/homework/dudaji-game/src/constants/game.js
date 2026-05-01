@@ -3,3 +3,7 @@ export const LEVEL_CONFIG = {
   2: { size: 3, time: 20 },
   3: { size: 4, time: 30 },
 };
+
+export const MOLE_HIT_DURATION = 700;
+export const SPAWN_INTERVAL = 1000;
+export const TIMER_INTERVAL = 1000;

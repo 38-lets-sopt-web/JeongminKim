@@ -1,3 +1,5 @@
+import { MOLE_HIT_DURATION } from "@/constants/game";
+
 function useCellClick({
   isPlaying,
   cells,
@@ -23,7 +25,7 @@ function useCellClick({
         setCells((prev) =>
           prev.map((c, i) => (i === index ? { type: null } : c))
         );
-      }, 700);
+      }, MOLE_HIT_DURATION);
     } else if (cell.type === "bomb") {
       setScore((prev) => prev - 1);
       setFail((prev) => prev + 1);

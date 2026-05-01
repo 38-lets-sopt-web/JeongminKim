@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { SPAWN_INTERVAL } from "@/constants/game";
 
 function useMole() {
   const moleTimerRef = useRef(null);
@@ -10,7 +11,7 @@ function useMole() {
       setCells((prev) =>
         prev.map((cell, i) => (i === idx ? { type } : { type: null }))
       );
-    }, 1000);
+    }, SPAWN_INTERVAL);
   };
 
   const stop = () => clearInterval(moleTimerRef.current);
