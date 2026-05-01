@@ -15,7 +15,7 @@ function useCellClick({
     if (cell.type === "mole") {
       setScore((prev) => prev + 1);
       setSuccess((prev) => prev + 1);
-      setMessage("성공! +1점");
+      setMessage("두더지를 잡았다! +1점");
       setCells((prev) =>
         prev.map((c, i) => (i === index ? { type: "mole-hit" } : c))
       );

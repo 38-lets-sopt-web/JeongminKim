@@ -21,7 +21,7 @@ function GamePage() {
             labelClassName="text-red"
           />
         </div>
-        <InfoCard label={gameState.message} value="" />
+        <InfoCard label="안내 메시지" value={gameState.message} />
       </div>
       <div className="w-[100rem]">
         <GameBoard gameState={gameState} gameActions={gameActions} />
