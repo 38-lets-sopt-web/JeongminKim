@@ -1,10 +1,21 @@
 import { cn } from "@/utils";
 
-function Button({ label, onClick, className }) {
+const variants = {
+  primary: "bg-main-600 text-ivory-100",
+  secondary: "bg-ivory-200 text-main-600",
+  start: "bg-green text-ivory-100",
+  stop: "bg-red text-ivory-100",
+};
+
+function Button({ label, onClick, variant = "primary", className }) {
   return (
     <button
       onClick={onClick}
-      className={cn("w-full h-16 rounded-lg font-medium text-lg", className)}
+      className={cn(
+        "w-full py-[0.8rem] rounded-full font-medium text-2xl transition-colors",
+        variants[variant],
+        className
+      )}
     >
       {label}
     </button>

@@ -8,7 +8,7 @@ function InfoCard({ label, value, labelClassName = "", className = "" }) {
         className
       )}
     >
-      <span className={cn("text-sm text-main-900", labelClassName)}>
+      <span className={cn("text-lg text-main-900", labelClassName)}>
         {label}
       </span>
       <span className="text-2xl font-bold text-main-900">{value}</span>
