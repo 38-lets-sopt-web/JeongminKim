@@ -1,5 +1,6 @@
 import { useRanking } from "@/hooks";
 import { Button } from "@/components/common";
+import RankingRow from "./RankingRow";
 
 function RankingPage() {
   const { ranking, clearRanking } = useRanking();
@@ -13,10 +14,10 @@ function RankingPage() {
         </div>
       </div>
 
-      <div className="bg-ivory-200 rounded-2xl overflow-hidden">
+      <div className="bg-main-300 rounded-2xl overflow-hidden">
         <table className="w-full text-center text-2xl">
           <thead>
-            <tr className="bg-main-300 text-main-900">
+            <tr className="bg-main-400 text-main-900">
               <th className="py-4">순위</th>
               <th className="py-4">레벨</th>
               <th className="py-4">점수</th>
@@ -32,12 +33,13 @@ function RankingPage() {
               </tr>
             ) : (
               ranking.map((record, i) => (
-                <tr key={i} className="border-t border-main-300">
-                  <td className="py-4 text-main-900">{i + 1}</td>
-                  <td className="py-4 text-main-900">Level {record.level}</td>
-                  <td className="py-4 text-main-900">{record.score}점</td>
-                  <td className="py-4 text-main-900">{record.time}</td>
-                </tr>
+                <RankingRow
+                  key={i}
+                  rank={i + 1}
+                  level={record.level}
+                  score={record.score}
+                  time={record.time}
+                />
               ))
             )}
           </tbody>
