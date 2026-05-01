@@ -2,6 +2,7 @@ import { useState } from "react";
 import { LEVEL_CONFIG } from "@/constants/game";
 import useTimer from "./useTimer";
 import useMole from "./useMole";
+import useCellClick from "./useCellClick";
 
 const initCells = (size) =>
   Array.from({ length: size * size }, () => ({ type: null }));
@@ -18,8 +19,17 @@ function useGame() {
 
   const timer = useTimer();
   const mole = useMole();
-
   const config = LEVEL_CONFIG[level];
+
+  const { handleCellClick } = useCellClick({
+    isPlaying,
+    cells,
+    setCells,
+    setScore,
+    setSuccess,
+    setFail,
+    setMessage,
+  });
 
   const reset = () => {
     timer.stop();
@@ -44,26 +54,6 @@ function useGame() {
     mole.start(config.size, setCells);
   };
 
-  const handleCellClick = (index) => {
-    if (!isPlaying) return;
-    const cell = cells[index];
-    if (!cell.type) return;
-
-    if (cell.type === "mole") {
-      setScore((prev) => prev + 1);
-      setSuccess((prev) => prev + 1);
-      setMessage("성공! +1점");
-    } else {
-      setScore((prev) => prev - 1);
-      setFail((prev) => prev + 1);
-      setMessage("폭탄! -1점");
-    }
-
-    setCells((prev) =>
-      prev.map((cell, i) => (i === index ? { type: null } : cell))
-    );
-  };
-
   const handleLevelChange = (newLevel) => {
     if (isPlaying) return;
     const num = Number(newLevel);
@@ -71,21 +61,24 @@ function useGame() {
     setTimeLeft(LEVEL_CONFIG[num].time);
     setCells(initCells(LEVEL_CONFIG[num].size));
   };
-
   return {
-    level,
-    isPlaying,
-    timeLeft,
-    score,
-    success,
-    fail,
-    message,
-    cells,
-    config,
-    start,
-    stop: reset,
-    handleCellClick,
-    handleLevelChange,
+    gameState: {
+      level,
+      isPlaying,
+      timeLeft,
+      score,
+      success,
+      fail,
+      message,
+      cells,
+      config,
+    },
+    gameActions: {
+      start,
+      stop: reset,
+      handleCellClick,
+      handleLevelChange,
+    },
   };
 }
 

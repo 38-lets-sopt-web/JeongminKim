@@ -1,21 +1,15 @@
-import { Button } from "./";
+import { Button, MoleCellItem } from "./";
 
-function GameBoard({
-  level,
-  isPlaying,
-  cells,
-  config,
-  onStart,
-  onStop,
-  onCellClick,
-  onLevelChange,
-}) {
+function GameBoard({ gameState, gameActions }) {
+  const { level, isPlaying, cells, config } = gameState;
+  const { start, stop, handleCellClick, handleLevelChange } = gameActions;
+
   return (
     <div className="flex-1 bg-ivory-200 rounded-2xl p-12 flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <select
           value={level}
-          onChange={(e) => onLevelChange(e.target.value)}
+          onChange={(e) => handleLevelChange(e.target.value)}
           disabled={isPlaying}
           className="bg-ivory-100 text-main-900 rounded-lg px-[1.6rem] py-[0.8rem] text-2xl font-medium disabled:opacity-50"
         >
@@ -24,8 +18,8 @@ function GameBoard({
           <option value={3}>Level 3</option>
         </select>
         <div className="flex gap-[0.8rem] w-[16rem]">
-          <Button label="시작" variant="start" onClick={onStart} />
-          <Button label="중단" variant="stop" onClick={onStop} />
+          <Button label="시작" variant="start" onClick={start} />
+          <Button label="중단" variant="stop" onClick={stop} />
         </div>
       </div>
 
@@ -35,10 +29,10 @@ function GameBoard({
           style={{ gridTemplateColumns: `repeat(${config.size}, 1fr)` }}
         >
           {cells.map((cell, i) => (
-            <div
+            <MoleCellItem
               key={i}
-              onClick={() => onCellClick(i)}
-              className="rounded-full aspect-square cursor-pointer transition-colors bg-main-300 hover:bg-main-400"
+              type={cell.type}
+              onClick={() => handleCellClick(i)}
             />
           ))}
         </div>
