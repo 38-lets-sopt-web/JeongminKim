@@ -1,9 +1,10 @@
 import { InfoCard, Modal } from "@/components/common";
 import GameBoard from "@/components/game/GameBoard";
-import { useGame } from "@/hooks";
+import { useGame, useRanking } from "@/hooks";
 
 function GamePage() {
-  const { gameState, gameActions } = useGame();
+  const { addRecord } = useRanking();
+  const { gameState, gameActions } = useGame(addRecord);
 
   return (
     <div className="flex gap-4 p-4">
