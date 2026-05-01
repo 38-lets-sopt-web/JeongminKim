@@ -1,31 +1,26 @@
+import { useState } from "react";
 import "./App.css";
-import Button from "./components/Button";
-
-function handleStart() {
-  console.log("게임 시작");
-}
-
-function handleStop() {
-  console.log("게임 중단");
-}
+import { Header, InfoCard } from "./components";
 
 function App() {
+  const [activeTab, setActiveTab] = useState("game");
+
   return (
-    <div className="min-h-screen bg-ivory-100 flex items-center justify-center">
-      <div className="bg-ivory-200 p-8 rounded-2xl border border-main-300">
-        <h1 className="text-3xl font-bold text-main-900">두더지 게임</h1>
-        <p className="text-secondary mt-2">두더지를 잡아라!</p>
-        <Button
-          label="시작"
-          onClick={handleStart}
-          className="bg-main-600 text-ivory-100"
-        />
-        <Button
-          label="중단"
-          onClick={handleStop}
-          className="bg-main-800 text-ivory-100"
-        />
-      </div>
+    <div className="min-h-screen bg-ivory-100 flex flex-col">
+      <Header activeTab={activeTab} onTabChange={setActiveTab} />
+      <main className="flex-1 p-16 flex flex-col gap-8">
+        {activeTab === "game" ? <div>게임 화면</div> : <div>랭킹 화면</div>}
+        <InfoCard label="남은 시간" value="20.0" />
+        <InfoCard label="총 점수" value={0} />
+
+        {/* 성공/실패 나란히 */}
+        <div className="flex gap-4">
+          <InfoCard label="성공" value={0} labelClassName="text-green" />
+          <InfoCard label="실패" value={0} labelClassName="text-red" />
+        </div>
+
+        <InfoCard label="안내 메시지" value="" />
+      </main>
     </div>
   );
 }
