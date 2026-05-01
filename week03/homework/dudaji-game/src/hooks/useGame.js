@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { LEVEL_CONFIG } from "@/constants/game";
 import useTimer from "./useTimer";
 import useMole from "./useMole";
@@ -7,7 +7,7 @@ import useCellClick from "./useCellClick";
 const initCells = (size) =>
   Array.from({ length: size * size }, () => ({ type: null }));
 
-function useGame() {
+function useGame(addRecord) {
   const [level, setLevel] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
   const [timeLeft, setTimeLeft] = useState(LEVEL_CONFIG[1].time);
@@ -18,6 +18,17 @@ function useGame() {
   const [cells, setCells] = useState(initCells(LEVEL_CONFIG[1].size));
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  const scoreRef = useRef(0);
+  const recordSaved = useRef(false);
+
+  const updateScore = (updater) => {
+    setScore((prev) => {
+      const next = updater(prev);
+      scoreRef.current = next;
+      return next;
+    });
+  };
+
   const timer = useTimer();
   const mole = useMole();
   const config = LEVEL_CONFIG[level];
@@ -26,7 +37,7 @@ function useGame() {
     isPlaying,
     cells,
     setCells,
-    setScore,
+    setScore: updateScore,
     setSuccess,
     setFail,
     setMessage,
@@ -39,6 +50,8 @@ function useGame() {
     setIsModalOpen(false);
     setTimeLeft(config.time);
     setScore(0);
+    scoreRef.current = 0;
+    recordSaved.current = false;
     setSuccess(0);
     setFail(0);
     setMessage("게임을 시작하세요!");
@@ -47,11 +60,16 @@ function useGame() {
 
   const start = () => {
     reset();
+    recordSaved.current = false;
     setIsPlaying(true);
     timer.start(setTimeLeft, () => {
       mole.stop();
       setIsPlaying(false);
       setIsModalOpen(true);
+      if (!recordSaved.current) {
+        recordSaved.current = true;
+        addRecord(level, scoreRef.current);
+      }
     });
     mole.start(config.size, setCells);
   };
@@ -82,7 +100,6 @@ function useGame() {
       stop: reset,
       handleCellClick,
       handleLevelChange,
-      closeModal: () => setIsModalOpen(false),
     },
   };
 }
