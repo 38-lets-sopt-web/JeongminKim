@@ -8,7 +8,7 @@ interface ButtonProps
 }
 
 const buttonVariants = cva(
-  "cursor-pointer rounded-lg w-full font-medium transition-colors disabled:cursor-not-allowed",
+  "cursor-pointer rounded-lg w-full transition-colors disabled:cursor-not-allowed",
   {
     variants: {
       variant: {
@@ -20,9 +20,9 @@ const buttonVariants = cva(
           "bg-transparent text-primary-500 outline outline-primary-300 hover:bg-primary-100 active:bg-primary-200 disabled:outline-primary-200 disabled:text-primary-300",
       },
       size: {
-        small: "px-3 py-2 text-sm",
-        medium: "px-4 py-3 text-base",
-        large: "px-6 py-4 text-lg",
+        small: "px-3 py-2 sub3",
+        medium: "px-4 py-3 sub2",
+        large: "px-6 py-4 sub1",
       },
     },
     defaultVariants: {

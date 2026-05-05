@@ -10,7 +10,7 @@ interface InputProps
 }
 
 const inputVariants = cva(
-  "w-full rounded-lg border px-4 py-3 transition-colors focus:outline-none placeholder:text-primary-300",
+  "w-full rounded-lg border px-4 py-3 transition-colors focus:outline-none placeholder:text-primary-300 body2",
   {
     variants: {
       variant: {
@@ -27,9 +27,7 @@ const inputVariants = cva(
 const Input = ({ ref, label, variant, className, ...props }: InputProps) => {
   return (
     <div className="flex flex-col gap-2">
-      {label && (
-        <label className="text-primary-700 font-medium text-sm">{label}</label>
-      )}
+      {label && <label className="sub3 text-primary-700">{label}</label>}
       <input
         ref={ref}
         className={cn(inputVariants({ variant }), className)}
