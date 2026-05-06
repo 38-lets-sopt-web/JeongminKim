@@ -11,4 +11,8 @@ export const ROUTES_CONFIG = {
     title: "회원가입",
     path: "/signup",
   },
+  members: {
+    title: "회원 조회",
+    path: "/members",
+  },
 };

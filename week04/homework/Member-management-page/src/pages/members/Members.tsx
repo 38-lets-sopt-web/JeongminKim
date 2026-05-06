@@ -2,7 +2,7 @@ function MyPage() {
   return (
     <>
       <main>
-        <h1>마이 페이지</h1>
+        <h1>멤버조회 페이지</h1>
       </main>
     </>
   );
