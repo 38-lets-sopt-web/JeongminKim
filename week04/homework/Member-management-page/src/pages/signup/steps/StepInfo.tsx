@@ -1,7 +1,7 @@
 import { Button, Input } from "@shared/components";
 import type { StepProps } from "@pages/signup/typs/type";
+import { EMAIL_REGEX } from "@/shared/constants/regex";
 
-const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PART_OPTIONS = ["iOS", "안드로이드", "웹"] as const;
 
 function StepInfo({ register, errors }: StepProps) {

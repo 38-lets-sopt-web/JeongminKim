@@ -1,13 +1,13 @@
 import { Button, Input, PasswordToggle } from "@shared/components";
 import type { StepProps } from "@pages/signup/typs/type";
 import { useState } from "react";
+import { PASSWORD_REGEX } from "@shared/constants/regex";
 
 function StepPassword({ register, errors, watch, onNext }: StepProps) {
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
 
   const isDisabled = !!errors.password || !!errors.passwordConfirm;
-  const PASSWORD_REGEX = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])\S{8,20}$/;
 
   return (
     <>
