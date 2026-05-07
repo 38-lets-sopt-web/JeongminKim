@@ -1,4 +1,5 @@
 import { ROUTES_CONFIG } from "@/routers/routesConfig";
+import { postSignup } from "@/shared/api/auth";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router";
@@ -24,9 +25,15 @@ function Signup() {
     if (isValid) setStep((prev) => prev + 1);
   };
 
-  const onSubmit = (data: SignupFormValues) => {
-    console.log(data);
-    // TODO: 회원가입 API 연동
+  const onSubmit = async (data: SignupFormValues) => {
+    try {
+      await postSignup(data);
+      alert("회원가입이 완료되었습니다!");
+      navigate(ROUTES_CONFIG.login.path);
+    } catch (error) {
+      alert("회원가입에 실패했습니다. 다시 시도해주세요.");
+      console.error(error);
+    }
   };
 
   return (

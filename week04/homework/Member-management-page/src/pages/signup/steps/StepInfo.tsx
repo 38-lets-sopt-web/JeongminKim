@@ -1,19 +1,12 @@
 import { Button, Input } from "@/shared/components";
 import type { StepProps } from "@pages/signup/typs/type";
 
-function StepInfo({ register, errors }: StepProps) {
-  const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const PART_OPTIONS = ["iOS", "안드로이드", "웹"] as const;
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PART_OPTIONS = ["iOS", "안드로이드", "웹"] as const;
 
+function StepInfo({ register, errors }: StepProps) {
   const isDisabled =
     !!errors.name || !!errors.email || !!errors.age || !!errors.part;
-
-  const handleSubmit = () => {
-    if (!isDisabled) {
-      // TODO: 회원가입 API 연동 , (로그인 성공시-> 마이페이지 + alert 이름 출력)
-      // (회원가입 실패시-> alert)
-    }
-  };
 
   return (
     <>
@@ -28,7 +21,6 @@ function StepInfo({ register, errors }: StepProps) {
           },
         })}
       />
-
       <Input
         label="이메일"
         type="email"
@@ -41,7 +33,6 @@ function StepInfo({ register, errors }: StepProps) {
           },
         })}
       />
-
       <Input
         label="나이"
         type="text"
@@ -51,7 +42,6 @@ function StepInfo({ register, errors }: StepProps) {
           validate: (value) => !isNaN(Number(value)) || "숫자만 입력해주세요.",
         })}
       />
-
       <div className="flex flex-col gap-2">
         <label className="sub3 text-primary-700">파트</label>
         <select
@@ -66,7 +56,6 @@ function StepInfo({ register, errors }: StepProps) {
           ))}
         </select>
       </div>
-
       {(errors.name || errors.email || errors.age || errors.part) && (
         <p className="text-secondary-500 caption1">
           {errors.name?.message ||
@@ -75,8 +64,7 @@ function StepInfo({ register, errors }: StepProps) {
             errors.part?.message}
         </p>
       )}
-
-      <Button type="submit" isDisabled={isDisabled} onClick={handleSubmit}>
+      <Button type="submit" isDisabled={isDisabled}>
         회원가입
       </Button>
     </>
