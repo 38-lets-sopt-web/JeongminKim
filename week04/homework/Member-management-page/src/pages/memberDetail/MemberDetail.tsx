@@ -1,39 +1,8 @@
-import { getUserById } from "@/shared/api/user";
-import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router";
-
-interface Member {
-  id: number;
-  name: string;
-  part: string;
-  email: string;
-  age: number;
-}
-
-const MEMBER_DETAIL_FIELDS: { label: string; key: keyof Member }[] = [
-  { label: "이름", key: "name" },
-  { label: "아이디", key: "id" },
-  { label: "이메일", key: "email" },
-  { label: "나이", key: "age" },
-  { label: "파트", key: "part" },
-];
+import { MEMBER_DETAIL_FIELDS } from "@/shared/constants/memberFields";
+import { useMemberDetail } from "./hooks/useMemberDetail";
 
 function MemberDetail() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [member, setMember] = useState<Member | null>(null);
-
-  useEffect(() => {
-    const fetchMember = async () => {
-      try {
-        const data = await getUserById(Number(id));
-        setMember(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-    fetchMember();
-  }, [id]);
+  const { member, handlers } = useMemberDetail();
 
   if (!member) {
     return (
@@ -50,7 +19,7 @@ function MemberDetail() {
       <div className="w-full max-w-[520px] flex flex-col gap-4">
         <button
           type="button"
-          onClick={() => navigate(-1)}
+          onClick={handlers.handleGoBack}
           className="flex items-center gap-1 body2 text-primary-500 hover:text-primary-700 w-fit"
         >
           ← 뒤로가기
