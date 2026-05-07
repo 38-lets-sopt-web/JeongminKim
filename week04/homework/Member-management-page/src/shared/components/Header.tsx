@@ -1,13 +1,27 @@
 import { ROUTES_CONFIG } from "@/routers/routesConfig";
+import { getUserById } from "@/shared/api/user";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
 function Header() {
-  // TODO: 로그인 API 연동 후 userName 가져오기
-  const userName = "김자반";
+  const [userName, setUserName] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const fetchUserName = async () => {
+      try {
+        const userId = Number(localStorage.getItem("userId"));
+        const data = await getUserById(userId);
+        setUserName(data.name);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchUserName();
+  }, []);
+
   const handleLogout = () => {
-    // TODO: 로그아웃 처리 로컬스토리지에서 삭제
+    localStorage.removeItem("userId");
     navigate(ROUTES_CONFIG.login.path);
   };
 
