@@ -1,4 +1,4 @@
-import { Button, Input } from "@/shared/components";
+import { Button, Input } from "@shared/components";
 import type { StepProps } from "@pages/signup/typs/type";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

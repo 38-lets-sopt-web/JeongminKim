@@ -1,7 +1,7 @@
 import { Button, Input } from "@/shared/components";
 import MemberCard from "@pages/members/MemberCard";
-import MemberSearchResult from "./components/MemberSearchResult";
-import { useMembers } from "./hooks/useMembers";
+import MemberSearchResult from "@pages/members/components/MemberSearchResult";
+import { useMembers } from "@pages/members/hooks/useMembers";
 
 function Members() {
   const { search, members } = useMembers();

@@ -1,4 +1,4 @@
-import { Button, Input, PasswordToggle } from "@/shared/components";
+import { Button, Input, PasswordToggle } from "@shared/components";
 import type { StepProps } from "@pages/signup/typs/type";
 import { useState } from "react";
 

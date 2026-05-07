@@ -1,5 +1,5 @@
 import { Button, Input } from "@/shared/components";
-import { useLoginForm } from "./hooks/useLoginForm";
+import { useLoginForm } from "@pages/login/hooks/useLoginForm";
 
 function Login() {
   const {

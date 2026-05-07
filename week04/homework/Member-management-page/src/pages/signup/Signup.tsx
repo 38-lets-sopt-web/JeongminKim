@@ -1,7 +1,7 @@
 import StepId from "@pages/signup/steps/StepId";
 import StepPassword from "@pages/signup/steps/StepPassword";
 import StepInfo from "@pages/signup/steps/StepInfo";
-import { useSignupForm } from "./hooks/useSignupForm";
+import { useSignupForm } from "@pages/signup/hooks/useSignupForm";
 
 function Signup() {
   const { step, form, handlers } = useSignupForm();

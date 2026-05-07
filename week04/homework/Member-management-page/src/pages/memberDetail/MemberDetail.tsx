@@ -1,5 +1,5 @@
 import { MEMBER_DETAIL_FIELDS } from "@/shared/constants/memberFields";
-import { useMemberDetail } from "./hooks/useMemberDetail";
+import { useMemberDetail } from "@pages/memberDetail/hooks/useMemberDetail";
 
 function MemberDetail() {
   const { member, handlers } = useMemberDetail();
