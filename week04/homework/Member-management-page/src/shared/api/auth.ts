@@ -1,4 +1,4 @@
-import { instance } from "./instance";
+import { instance } from "@shared/api/instance";
 import type { SignupFormValues } from "@pages/signup/typs/type";
 
 type SignupRequest = {

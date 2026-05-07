@@ -1,5 +1,6 @@
 import { ROUTES_CONFIG } from "@/routers/routesConfig";
 import { Button, Input } from "@/shared/components";
+import { postSignin } from "@/shared/api/login";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -14,10 +15,15 @@ function Login() {
   const handleSignUp = () => {
     navigate(ROUTES_CONFIG.signup.path);
   };
-  const handleLogin = () => {
-    // TODO: 로그인 API 연동시 userId 로컬스토리지에 저장
-    // TODO: setIsError  도 설정 필요
-    navigate(ROUTES_CONFIG.login.path);
+
+  const handleLogin = async () => {
+    try {
+      const response = await postSignin({ loginId: id, password });
+      localStorage.setItem("userId", String(response.userId));
+      navigate(ROUTES_CONFIG.members.path);
+    } catch {
+      setIsError(true);
+    }
   };
 
   const isDisabled = !id || !password;
@@ -32,7 +38,10 @@ function Login() {
           placeholder="아이디를 입력해주세요."
           variant="default"
           value={id}
-          onChange={(e) => setId(e.target.value)}
+          onChange={(e) => {
+            setId(e.target.value);
+            setIsError(false);
+          }}
         />
 
         <Input
@@ -41,7 +50,10 @@ function Login() {
           variant="default"
           placeholder="비밀번호를 입력해주세요."
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            setIsError(false);
+          }}
         />
 
         <label className="flex items-center gap-2 cursor-pointer w-fit">
