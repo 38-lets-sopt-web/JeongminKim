@@ -1,3 +1,5 @@
+import { getUserById } from "@/shared/api/user";
+import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
 
 interface Member {
@@ -7,15 +9,6 @@ interface Member {
   email: string;
   age: number;
 }
-
-// TODO: API 연동 후 실제 데이터로 교체
-const MOCK_MEMBERS: Member[] = [
-  { id: 1, name: "나연", part: "iOS", email: "na@example.com", age: 20 },
-  { id: 2, name: "나연", part: "iOS", email: "na2@example.com", age: 21 },
-  { id: 3, name: "test", part: "웹", email: "test@example.com", age: 22 },
-  { id: 4, name: "이채영", part: "웹", email: "lee@example.com", age: 23 },
-  { id: 5, name: "김철수", part: "iOS", email: "kim@example.com", age: 25 },
-];
 
 const MEMBER_DETAIL_FIELDS: { label: string; key: keyof Member }[] = [
   { label: "이름", key: "name" },
@@ -28,8 +21,19 @@ const MEMBER_DETAIL_FIELDS: { label: string; key: keyof Member }[] = [
 function MemberDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [member, setMember] = useState<Member | null>(null);
 
-  const member = MOCK_MEMBERS.find((m) => m.id === Number(id));
+  useEffect(() => {
+    const fetchMember = async () => {
+      try {
+        const data = await getUserById(Number(id));
+        setMember(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchMember();
+  }, [id]);
 
   if (!member) {
     return (
