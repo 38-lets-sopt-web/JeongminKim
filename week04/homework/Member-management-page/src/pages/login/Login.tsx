@@ -1,32 +1,20 @@
-import { ROUTES_CONFIG } from "@/routers/routesConfig";
 import { Button, Input } from "@/shared/components";
-import { postSignin } from "@/shared/api/login";
-import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useLoginForm } from "./hooks/useLoginForm";
 
 function Login() {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-  const [isError, setIsError] = useState(false);
-  const ERROR_TEXT = "아이디 또는 비밀번호를 확인해주세요.";
-  const navigate = useNavigate();
-
-  const handleSignUp = () => {
-    navigate(ROUTES_CONFIG.signup.path);
-  };
-
-  const handleLogin = async () => {
-    try {
-      const response = await postSignin({ loginId: id, password });
-      localStorage.setItem("userId", String(response.data.userId));
-      navigate(ROUTES_CONFIG.members.path);
-    } catch {
-      setIsError(true);
-    }
-  };
-
-  const isDisabled = !id || !password;
+  const {
+    id,
+    password,
+    showPassword,
+    setShowPassword,
+    isError,
+    isDisabled,
+    ERROR_TEXT,
+    handleIdChange,
+    handlePasswordChange,
+    handleLogin,
+    handleSignUp,
+  } = useLoginForm();
 
   return (
     <div className="min-h-screen bg-ivory-300 flex items-center justify-center">
@@ -38,10 +26,7 @@ function Login() {
           placeholder="아이디를 입력해주세요."
           variant="default"
           value={id}
-          onChange={(e) => {
-            setId(e.target.value);
-            setIsError(false);
-          }}
+          onChange={handleIdChange}
         />
 
         <Input
@@ -50,10 +35,7 @@ function Login() {
           variant="default"
           placeholder="비밀번호를 입력해주세요."
           value={password}
-          onChange={(e) => {
-            setPassword(e.target.value);
-            setIsError(false);
-          }}
+          onChange={handlePasswordChange}
         />
 
         <label className="flex items-center gap-2 cursor-pointer w-fit">
