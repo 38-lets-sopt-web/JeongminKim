@@ -19,7 +19,7 @@ function Login() {
   const handleLogin = async () => {
     try {
       const response = await postSignin({ loginId: id, password });
-      localStorage.setItem("userId", String(response.userId));
+      localStorage.setItem("userId", String(response.data.userId));
       navigate(ROUTES_CONFIG.members.path);
     } catch {
       setIsError(true);
