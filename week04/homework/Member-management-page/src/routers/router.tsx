@@ -5,6 +5,7 @@ import { ROUTES_CONFIG } from "@/routers/routesConfig";
 import { createBrowserRouter, Navigate } from "react-router";
 import Members from "@/pages/members/Members";
 import Layout from "@/shared/layout/Layout";
+import MemberDetail from "@/pages/memberDetail/MemberDetail";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path: ROUTES_CONFIG.members.path,
         element: <Members />,
+      },
+      {
+        path: "/members/:id",
+        element: <MemberDetail />,
       },
     ],
   },

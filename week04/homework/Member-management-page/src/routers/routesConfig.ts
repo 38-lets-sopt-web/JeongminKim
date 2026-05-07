@@ -15,4 +15,8 @@ export const ROUTES_CONFIG = {
     title: "회원 조회",
     path: "/members",
   },
+  memberDetail: {
+    title: "멤버 상세",
+    path: (id: number) => `/members/${id}`,
+  },
 };
