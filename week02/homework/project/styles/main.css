@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  gap: 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-gray-200);
+  padding: 48px;
+}
