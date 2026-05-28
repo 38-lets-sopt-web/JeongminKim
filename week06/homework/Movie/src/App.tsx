@@ -1,7 +1,9 @@
 import "./App.css";
+import { RouterProvider } from "react-router";
+import { router } from "@router/router";
 
 function App() {
-  return <>6주차 쿼리연습</>;
+  return <RouterProvider router={router} />;
 }
 
 export default App;
