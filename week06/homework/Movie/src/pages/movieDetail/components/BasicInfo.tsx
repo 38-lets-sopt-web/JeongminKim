@@ -15,16 +15,16 @@ const ROW_KEYS: { label: string; key: keyof MovieDetailData }[] = [
 
 function BasicInfo({ movie }: Props) {
   return (
-    <div className="bg-white rounded-xl p-5">
-      <h2 className="text-base font-bold text-gray-900 mb-4">기본 정보</h2>
-      <table className="w-full text-sm">
+    <div className="bg-cream-200 rounded-xl p-5">
+      <h2 className="sub2 text-earth-900 mb-4">기본 정보</h2>
+      <table className="w-full">
         <tbody>
           {ROW_KEYS.map(({ label, key }) => (
-            <tr key={key} className="border-b border-gray-50 last:border-none">
-              <td className="py-2 pr-4 text-gray-400 whitespace-nowrap w-20">
+            <tr key={key} className="border-b border-cream-400 last:border-none">
+              <td className="py-2 pr-4 caption1 text-earth-400 whitespace-nowrap w-20">
                 {label}
               </td>
-              <td className="py-2 text-gray-700">{String(movie[key])}</td>
+              <td className="py-2 body3 text-earth-700">{String(movie[key])}</td>
             </tr>
           ))}
         </tbody>

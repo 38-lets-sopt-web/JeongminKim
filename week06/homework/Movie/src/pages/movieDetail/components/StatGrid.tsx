@@ -11,9 +11,9 @@ function StatGrid({ items }: Props) {
   return (
     <div className="grid grid-cols-2 gap-3 mt-4">
       {items.map(({ label, value }) => (
-        <div key={label} className="bg-gray-50 rounded-lg p-3">
-          <p className="text-xs text-gray-400 mb-1">{label}</p>
-          <p className="text-sm font-bold text-gray-800">{value}</p>
+        <div key={label} className="bg-cream-300 rounded-lg p-3">
+          <p className="caption1 text-earth-400 mb-1">{label}</p>
+          <p className="sub3 text-earth-800">{value}</p>
         </div>
       ))}
     </div>

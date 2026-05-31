@@ -27,7 +27,7 @@ function RatingFilter({ value, onChange }: Props) {
             );
             if (option) onChange(option.range);
           }}
-          className="appearance-none bg-white border border-gray-200 rounded-lg px-4 py-2.5 pr-10 text-sm text-gray-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-gray-300"
+          className="appearance-none bg-cream-200 border border-earth-200 rounded-lg px-4 py-2.5 pr-10 body3 text-earth-700 cursor-pointer focus:outline-none focus:ring-2 focus:ring-earth-300"
         >
           {RATING_OPTIONS.map((o) => (
             <option key={o.label} value={o.label}>
@@ -35,7 +35,7 @@ function RatingFilter({ value, onChange }: Props) {
             </option>
           ))}
         </select>
-        <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs">
+        <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-earth-400 caption1">
           ▼
         </span>
       </div>

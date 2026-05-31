@@ -45,9 +45,9 @@ function RatingForm({ movieId }: Props) {
   };
 
   return (
-    <div className="bg-white rounded-xl p-5">
-      <h2 className="text-base font-bold text-gray-900 mb-1">별점 남기기</h2>
-      <p className="text-xs text-gray-400 mb-3">0.5 ~ 10.0</p>
+    <div className="bg-cream-200 rounded-xl p-5">
+      <h2 className="sub2 text-earth-900 mb-1">별점 남기기</h2>
+      <p className="caption1 text-earth-400 mb-3">0.5 ~ 10.0</p>
 
       <input
         type="number"
@@ -57,22 +57,22 @@ function RatingForm({ movieId }: Props) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder={saved !== null ? String(saved) : "별점 입력"}
-        className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm mb-3
-          focus:outline-none focus:ring-2 focus:ring-gray-300"
+        className="w-full border border-earth-200 rounded-lg px-3 py-2 body3 mb-3
+          focus:outline-none focus:ring-2 focus:ring-earth-300"
       />
 
       <div className="flex items-center gap-3">
         <button
           onClick={handleSave}
-          className="bg-gray-900 text-white text-sm font-semibold px-4 py-2 rounded-lg
-            hover:bg-gray-700 transition-colors"
+          className="bg-earth-800 text-cream-100 sub3 px-4 py-2 rounded-lg
+            hover:bg-earth-700 transition-colors"
         >
           별점 저장
         </button>
         {saved !== null && (
           <button
             onClick={handleDelete}
-            className="text-sm text-gray-400 hover:text-red-500 transition-colors"
+            className="body3 text-earth-400 hover:text-red-500 transition-colors"
           >
             별점 삭제하기
           </button>
@@ -81,8 +81,8 @@ function RatingForm({ movieId }: Props) {
 
       {message !== null && (
         <p
-          className={`text-xs mt-3 ${
-            message.isError ? "text-red-500" : "text-blue-500"
+          className={`caption1 mt-3 ${
+            message.isError ? "text-red-500" : "text-sky-700"
           }`}
         >
           {message.text}

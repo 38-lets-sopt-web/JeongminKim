@@ -18,7 +18,7 @@ function MovieInfo({ movie }: Props) {
   ];
 
   return (
-    <div className="bg-white rounded-xl p-5 mb-4">
+    <div className="bg-cream-200 rounded-xl p-5 mb-4">
       <div className="flex gap-4">
         <img
           src={movie.posterUrl}
@@ -26,8 +26,8 @@ function MovieInfo({ movie }: Props) {
           className="w-28 rounded-lg object-cover flex-shrink-0"
         />
         <div className="flex-1 min-w-0">
-          <p className="text-xs text-gray-400 mb-1">{movie.releaseDate}</p>
-          <h1 className="text-2xl font-bold text-gray-900 mb-3">
+          <p className="caption1 text-earth-400 mb-1">{movie.releaseDate}</p>
+          <h1 className="head3 text-earth-900 mb-3">
             {movie.title}
           </h1>
           <div className="flex flex-wrap gap-1.5">

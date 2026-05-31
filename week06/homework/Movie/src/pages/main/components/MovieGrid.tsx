@@ -39,10 +39,10 @@ function MovieGrid({ ratingRange }: Props) {
         className="h-10 mt-6 flex items-center justify-center"
       >
         {isLoading && (
-          <span className="text-sm text-gray-400">불러오는 중...</span>
+          <span className="body3 text-earth-400">불러오는 중...</span>
         )}
         {!hasMore && visibleMovies.length > 0 && (
-          <span className="text-sm text-gray-400">모든 영화를 불러왔어요</span>
+          <span className="body3 text-earth-400">모든 영화를 불러왔어요</span>
         )}
       </div>
     </>
