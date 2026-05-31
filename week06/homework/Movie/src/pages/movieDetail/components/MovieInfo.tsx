@@ -18,7 +18,7 @@ function MovieInfo({ movie }: Props) {
   ];
 
   return (
-    <div className="bg-cream-200 rounded-xl p-5 mb-4">
+    <div className="bg-white border border-primary-200 rounded-xl p-5 mb-4">
       <div className="flex gap-4">
         <img
           src={movie.posterUrl}
@@ -27,9 +27,7 @@ function MovieInfo({ movie }: Props) {
         />
         <div className="flex-1 min-w-0">
           <p className="caption1 text-earth-400 mb-1">{movie.releaseDate}</p>
-          <h1 className="head3 text-earth-900 mb-3">
-            {movie.title}
-          </h1>
+          <h1 className="head3 text-earth-800 mb-3">{movie.title}</h1>
           <div className="flex flex-wrap gap-1.5">
             {movie.genres.map((g) => (
               <GenreBadge key={g} genre={g} />

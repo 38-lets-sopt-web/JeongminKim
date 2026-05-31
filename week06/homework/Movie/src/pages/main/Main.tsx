@@ -6,11 +6,9 @@ function Main() {
   const [ratingRange, setRatingRange] = useState<[number, number]>([0, 10]);
 
   return (
-    <div className="min-h-screen bg-cream-100">
+    <div className="min-h-screen bg-primary-100">
       <div className="max-w-6xl mx-auto px-6 py-10">
-        <h1 className="head2 text-earth-900 mb-6">
-          Movie Explorer
-        </h1>
+        <h1 className="head1 text-earth-700 mb-6">Movie Explorer</h1>
         <RatingFilter value={ratingRange} onChange={setRatingRange} />
         <MovieGrid ratingRange={ratingRange} />
       </div>

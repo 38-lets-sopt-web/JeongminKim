@@ -1,48 +1,36 @@
-/* index.css */
 @import "tailwindcss";
 
 @theme {
-  /* Mother Earth – 브라운 */
-  --color-earth-100: #f0e8e4;
-  --color-earth-200: #ddc9c0;
-  --color-earth-300: #c4a090;
-  --color-earth-400: #a87660;
-  --color-earth-500: #8a5240;
-  --color-earth-600: #6e3a2c;
-  --color-earth-700: #513229;
-  --color-earth-800: #3a2019;
-  --color-earth-900: #22100d;
+  /* Old Burgundy – 브라운 */
+  --color-earth-100: #ede8e7;
+  --color-earth-200: #d4c5c3;
+  --color-earth-300: #b89e9b;
+  --color-earth-400: #9a7773;
+  --color-earth-500: #7a5450;
+  --color-earth-600: #5e3d3a;
+  --color-earth-700: #43302e;
+  --color-earth-800: #2e1f1d;
+  --color-earth-900: #1a100f;
 
-  /* Lucky Dice + The Bay – 아이보리 & 옐로우 */
-  --color-cream-100: #fefdf9;
-  --color-cream-200: #fdf9ef;
-  --color-cream-300: #faf4e0;
-  --color-cream-400: #f9eece;
-  --color-cream-500: #f4f1e2;
-  --color-cream-600: #fce6b7;
-  --color-cream-700: #f0cc80;
-  --color-cream-800: #d4a84b;
-  --color-cream-900: #a07828;
+  /* Pastel Blue – 프라이머리 */
+  --color-primary-100: #f2f7fb;
+  --color-primary-200: #e3eff7;
+  --color-primary-300: #d0e4f2;
+  --color-primary-400: #c1dbe8;
+  --color-primary-500: #93c0d9;
+  --color-primary-600: #65a0c3;
+  --color-primary-700: #3d7ca4;
+  --color-primary-800: #265878;
+  --color-primary-900: #14374d;
 
-  /* Something Blue – 라이트 블루 */
-  --color-sky-100: #f4f9fe;
-  --color-sky-200: #e8f3fd;
-  --color-sky-300: #d8ebf9;
-  --color-sky-400: #b8d8f4;
-  --color-sky-500: #8cbde9;
-  --color-sky-600: #61a0d8;
-  --color-sky-700: #3d7eb8;
-  --color-sky-800: #265a8a;
-  --color-sky-900: #153a5c;
-
-  /* Walking Vinnie – 세이지 그린 */
-  --color-sage-100: #f5f5ec;
-  --color-sage-200: #eaead8;
-  --color-sage-300: #d7d4b1;
-  --color-sage-400: #c4be8a;
-  --color-sage-500: #aca86a;
-  --color-sage-600: #8a8750;
-  --color-sage-700: #686640;
-  --color-sage-800: #454430;
-  --color-sage-900: #252418;
+  /* Buttermilk – 세컨더리 */
+  --color-secondary-100: #fffdf0;
+  --color-secondary-200: #fffae0;
+  --color-secondary-300: #fff6cc;
+  --color-secondary-400: #fff1b5;
+  --color-secondary-500: #ffe880;
+  --color-secondary-600: #f5d44a;
+  --color-secondary-700: #d4ad1e;
+  --color-secondary-800: #a07e0c;
+  --color-secondary-900: #6b5204;
 }

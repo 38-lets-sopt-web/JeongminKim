@@ -9,24 +9,20 @@ import { MOCK_DETAIL } from "./mock";
 function MovieDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-
-  // API 연결 전 mock 사용
   const movie = MOCK_DETAIL;
 
   return (
-    <div className="min-h-screen bg-cream-100">
+    <div className="min-h-screen bg-primary-100">
       <div className="max-w-3xl mx-auto px-4 py-6">
         <button
           onClick={() => navigate(-1)}
-          className="body3 text-earth-500 hover:text-earth-800 mb-4 flex items-center gap-1 transition-colors"
+          className="caption2 text-earth-500 hover:text-earth-700 mb-4 flex items-center gap-1 transition-colors"
         >
           ← 목록으로 돌아가기
         </button>
-
         <BackdropHero backdropUrl={movie.backdropUrl} title={movie.title} />
         <MovieInfo movie={movie} />
         <Overview overview={movie.overview} />
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
           <BasicInfo movie={movie} />
           <RatingForm movieId={Number(id)} />

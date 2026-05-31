@@ -5,7 +5,7 @@ interface Props {
 
 function BackdropHero({ backdropUrl, title }: Props) {
   return (
-    <div className="w-full aspect-[16/7] rounded-xl overflow-hidden bg-earth-300 mb-4">
+    <div className="w-full aspect-[16/7] rounded-xl overflow-hidden bg-primary-300 mb-4">
       <img
         src={backdropUrl}
         alt={`${title} 배경`}
