@@ -1,0 +1,65 @@
+import { Button, Input } from "@/shared/components";
+import { useLoginForm } from "@pages/login/hooks/useLoginForm";
+
+function Login() {
+  const {
+    id,
+    password,
+    showPassword,
+    setShowPassword,
+    isError,
+    isDisabled,
+    ERROR_TEXT,
+    handleIdChange,
+    handlePasswordChange,
+    handleLogin,
+    handleSignUp,
+  } = useLoginForm();
+
+  return (
+    <div className="min-h-screen bg-ivory-300 flex items-center justify-center">
+      <div className="bg-white rounded-2xl px-32 py-16 shadow-md flex flex-col gap-4">
+        <h1 className="head1 text-primary-900">SOPT MEMBERS</h1>
+
+        <Input
+          label="아이디"
+          placeholder="아이디를 입력해주세요."
+          variant="default"
+          value={id}
+          onChange={handleIdChange}
+        />
+
+        <Input
+          label="비밀번호"
+          type={showPassword ? "text" : "password"}
+          variant="default"
+          placeholder="비밀번호를 입력해주세요."
+          value={password}
+          onChange={handlePasswordChange}
+        />
+
+        <label className="flex items-center gap-2 cursor-pointer w-fit">
+          <input
+            type="checkbox"
+            checked={showPassword}
+            onChange={() => setShowPassword((prev) => !prev)}
+            className="w-4 h-4 accent-primary-400 outline-primary-500"
+          />
+          <span className="body3 text-primary-700">비밀번호 표시</span>
+        </label>
+
+        <div className="flex flex-col gap-2">
+          {isError && <p className="text-secondary-400 sub3">{ERROR_TEXT}</p>}
+          <Button disabled={isDisabled} onClick={handleLogin}>
+            로그인
+          </Button>
+          <Button variant="outline" onClick={handleSignUp}>
+            회원 가입
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Login;
