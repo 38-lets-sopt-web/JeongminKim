@@ -1,0 +1,48 @@
+/* index.css */
+@import "tailwindcss";
+
+@theme {
+  /* Mother Earth – 브라운 */
+  --color-earth-100: #f0e8e4;
+  --color-earth-200: #ddc9c0;
+  --color-earth-300: #c4a090;
+  --color-earth-400: #a87660;
+  --color-earth-500: #8a5240;
+  --color-earth-600: #6e3a2c;
+  --color-earth-700: #513229;
+  --color-earth-800: #3a2019;
+  --color-earth-900: #22100d;
+
+  /* Lucky Dice + The Bay – 아이보리 & 옐로우 */
+  --color-cream-100: #fefdf9;
+  --color-cream-200: #fdf9ef;
+  --color-cream-300: #faf4e0;
+  --color-cream-400: #f9eece;
+  --color-cream-500: #f4f1e2;
+  --color-cream-600: #fce6b7;
+  --color-cream-700: #f0cc80;
+  --color-cream-800: #d4a84b;
+  --color-cream-900: #a07828;
+
+  /* Something Blue – 라이트 블루 */
+  --color-sky-100: #f4f9fe;
+  --color-sky-200: #e8f3fd;
+  --color-sky-300: #d8ebf9;
+  --color-sky-400: #b8d8f4;
+  --color-sky-500: #8cbde9;
+  --color-sky-600: #61a0d8;
+  --color-sky-700: #3d7eb8;
+  --color-sky-800: #265a8a;
+  --color-sky-900: #153a5c;
+
+  /* Walking Vinnie – 세이지 그린 */
+  --color-sage-100: #f5f5ec;
+  --color-sage-200: #eaead8;
+  --color-sage-300: #d7d4b1;
+  --color-sage-400: #c4be8a;
+  --color-sage-500: #aca86a;
+  --color-sage-600: #8a8750;
+  --color-sage-700: #686640;
+  --color-sage-800: #454430;
+  --color-sage-900: #252418;
+}
