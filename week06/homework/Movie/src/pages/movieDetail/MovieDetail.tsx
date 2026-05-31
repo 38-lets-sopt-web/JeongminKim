@@ -1,4 +1,5 @@
 import { useNavigate, useParams } from "react-router";
+import Button from "../../shared/components/Button";
 import BackdropHero from "./components/BackdropHero";
 import MovieInfo from "./components/MovieInfo";
 import Overview from "./components/Overview";
@@ -14,12 +15,13 @@ function MovieDetail() {
   return (
     <div className="min-h-screen bg-primary-100">
       <div className="max-w-3xl mx-auto px-4 py-6">
-        <button
+        <Button
           onClick={() => navigate(-1)}
-          className="caption2 text-earth-500 hover:text-earth-700 mb-4 flex items-center gap-1 transition-colors"
-        >
-          ← 목록으로 돌아가기
-        </button>
+          className="mb-4"
+          label={"← 목록으로 돌아가기"}
+          variant="ghost"
+        />
+
         <BackdropHero backdropUrl={movie.backdropUrl} title={movie.title} />
         <MovieInfo movie={movie} />
         <Overview overview={movie.overview} />

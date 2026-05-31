@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../../../shared/components/Button";
 
 interface Props {
   movieId: number;
@@ -62,20 +63,19 @@ function RatingForm({ movieId }: Props) {
       />
 
       <div className="flex items-center gap-3">
-        <button
+        <Button
+          color="primary"
+          size="md"
           onClick={handleSave}
-          className="bg-earth-700 text-primary-100 sub3 px-4 py-2 rounded-lg
-            hover:bg-earth-800 transition-colors"
-        >
-          별점 저장
-        </button>
+          label={"별점 저장"}
+        />
         {saved !== null && (
-          <button
+          <Button
+            color="ghost"
+            size="md"
             onClick={handleDelete}
-            className="body3 text-earth-400 hover:text-secondary-700 transition-colors"
-          >
-            별점 삭제하기
-          </button>
+            label={"별점 삭제하기"}
+          />
         )}
       </div>
 
