@@ -1,6 +1,6 @@
 import { useState } from "react";
-import MovieGrid from "./components/MovieGrid";
-import RatingFilter from "./components/RatingFilter";
+import MovieGrid from "@pages/main/components/MovieGrid";
+import RatingFilter from "@pages/main/components/RatingFilter";
 
 function Main() {
   const [ratingRange, setRatingRange] = useState<[number, number]>([0, 10]);

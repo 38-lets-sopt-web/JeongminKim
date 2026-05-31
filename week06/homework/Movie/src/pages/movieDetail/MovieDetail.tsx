@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from "react-router";
-import Button from "../../shared/components/Button";
-import BackdropHero from "./components/BackdropHero";
-import MovieInfo from "./components/MovieInfo";
-import Overview from "./components/Overview";
-import BasicInfo from "./components/BasicInfo";
-import RatingForm from "./components/RatingForm";
-import { MOCK_DETAIL } from "./mock";
+import Button from "@shared/components/Button";
+import BackdropHero from "@pages/movieDetail/components/BackdropHero";
+import MovieInfo from "@pages/movieDetail/components/MovieInfo";
+import Overview from "@pages/movieDetail/components/Overview";
+import BasicInfo from "@pages/movieDetail/components/BasicInfo";
+import RatingForm from "@pages/movieDetail/components/RatingForm";
+import { MOCK_DETAIL } from "@pages/movieDetail/mock";
 
 function MovieDetail() {
   const { id } = useParams<{ id: string }>();

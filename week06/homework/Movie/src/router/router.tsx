@@ -1,4 +1,4 @@
-import { ROUTES_CONFIG } from "./routesConfig";
+import { ROUTES_CONFIG } from "@router/routesConfig";
 import { createBrowserRouter } from "react-router";
 import MovieDetail from "@pages/movieDetail/MovieDetail";
 import Main from "@pages/main/Main";

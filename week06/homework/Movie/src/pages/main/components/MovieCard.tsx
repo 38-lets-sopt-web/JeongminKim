@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-import type { Movie } from "../mock";
+import type { Movie } from "@pages/main/mock";
 
 interface Props {
   movie: Movie;

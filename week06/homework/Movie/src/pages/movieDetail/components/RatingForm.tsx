@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../../../shared/components/Button";
+import Button from "@shared/components/Button";
 
 interface Props {
   movieId: number;

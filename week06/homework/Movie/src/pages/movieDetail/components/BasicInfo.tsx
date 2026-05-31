@@ -1,4 +1,4 @@
-import type { MovieDetailData } from "../mock";
+import type { MovieDetailData } from "@pages/movieDetail/mock";
 
 interface Props {
   movie: MovieDetailData;

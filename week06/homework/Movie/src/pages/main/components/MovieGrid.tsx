@@ -1,7 +1,7 @@
 import { useRef, useCallback } from "react";
-import MovieCard from "./MovieCard";
-import useInfiniteScroll from "../hooks/useInfiniteScroll";
-import { MOCK_MOVIES } from "../mock";
+import MovieCard from "@pages/main/components/MovieCard";
+import useInfiniteScroll from "@pages/main/hooks/useInfiniteScroll";
+import { MOCK_MOVIES } from "@pages/main/mock";
 
 interface Props {
   ratingRange: [number, number];

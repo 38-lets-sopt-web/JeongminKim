@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo } from "react";
-import type { Movie } from "../mock";
+import type { Movie } from "@pages/main/mock";
 
 const PAGE_SIZE = 8;
 
