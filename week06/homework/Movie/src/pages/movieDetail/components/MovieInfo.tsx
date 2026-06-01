@@ -1,6 +1,6 @@
 import GenreBadge from "@pages/movieDetail/components/GenreBadge";
 import StatGrid from "@pages/movieDetail/components/StatGrid";
-import type { MovieDetailData } from "@pages/movieDetail/mock";
+import type { MovieDetailData } from "@shared/types/movie";
 
 interface Props {
   movie: MovieDetailData;

@@ -71,7 +71,7 @@ function RatingForm({ movieId }: Props) {
         />
         {saved !== null && (
           <Button
-            color="ghost"
+            color="outline"
             size="md"
             onClick={handleDelete}
             label={"별점 삭제하기"}

@@ -1,22 +1,4 @@
-export interface MovieDetailData {
-  id: number;
-  title: string;
-  originalTitle: string;
-  releaseDate: string;
-  overview: string;
-  posterUrl: string;
-  backdropUrl: string;
-  genres: string[];
-  voteAverage: number;
-  voteCount: number;
-  runtime: number;
-  status: string;
-  originalLanguage: string;
-  productionCountries: string;
-  spokenLanguages: string;
-  budget: string;
-  revenue: string;
-}
+import type { MovieDetailData } from "@shared/types/movie";
 
 export const MOCK_DETAIL: MovieDetailData = {
   id: 1226863,
