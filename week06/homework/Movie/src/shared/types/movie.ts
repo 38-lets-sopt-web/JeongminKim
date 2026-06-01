@@ -14,6 +14,26 @@ export type MovieListResponse = {
   total_results: number;
 };
 
+export type TMDBMovieDetail = {
+  id: number;
+  title: string;
+  original_title: string;
+  release_date: string;
+  overview: string;
+  poster_path: string | null;
+  backdrop_path: string | null;
+  genres: { id: number; name: string }[];
+  vote_average: number;
+  vote_count: number;
+  runtime: number;
+  status: string;
+  original_language: string;
+  production_countries: { iso_3166_1: string; name: string }[];
+  spoken_languages: { iso_639_1: string; english_name: string; name: string }[];
+  budget: number;
+  revenue: number;
+};
+
 export type MovieDetailData = {
   id: number;
   title: string;

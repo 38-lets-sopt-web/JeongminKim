@@ -5,12 +5,28 @@ import MovieInfo from "@pages/movieDetail/components/MovieInfo";
 import Overview from "@pages/movieDetail/components/Overview";
 import BasicInfo from "@pages/movieDetail/components/BasicInfo";
 import RatingForm from "@pages/movieDetail/components/RatingForm";
-import { MOCK_DETAIL } from "@pages/movieDetail/mock";
+import { useMovieDetail } from "@shared/queries/useMovieDetail";
 
 function MovieDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const movie = MOCK_DETAIL;
+  const { data: movie, isLoading, isError } = useMovieDetail(Number(id));
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-primary-100 flex items-center justify-center">
+        <p className="body3 text-earth-400">불러오는 중...</p>
+      </div>
+    );
+  }
+
+  if (isError || !movie) {
+    return (
+      <div className="min-h-screen bg-primary-100 flex items-center justify-center">
+        <p className="body3 text-red-500">영화 정보를 불러오지 못했습니다.</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-primary-100">
