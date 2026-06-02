@@ -1,5 +1,5 @@
-import { useRef, useCallback } from "react";
 import MovieCard from "@pages/main/components/MovieCard";
+import useInfiniteScroll from "@pages/main/hooks/useInfiniteScroll";
 import { useMovies } from "@shared/queries/useMovies";
 
 interface Props {
@@ -12,18 +12,7 @@ function MovieGrid({ ratingRange }: Props) {
 
   const movies = data?.pages.flatMap((page) => page.results) ?? [];
 
-  const observerRef = useRef<IntersectionObserver | null>(null);
-  const loaderRef = useCallback(
-    (node: HTMLDivElement | null) => {
-      if (isFetchingNextPage) return;
-      if (observerRef.current) observerRef.current.disconnect();
-      observerRef.current = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting && hasNextPage) fetchNextPage();
-      });
-      if (node) observerRef.current.observe(node);
-    },
-    [isFetchingNextPage, hasNextPage, fetchNextPage]
-  );
+  const loaderRef = useInfiniteScroll({ isFetchingNextPage, hasNextPage, fetchNextPage });
 
   return (
     <>

@@ -1,21 +1,14 @@
 import GenreBadge from "@pages/movieDetail/components/GenreBadge";
 import StatGrid from "@pages/movieDetail/components/StatGrid";
 import type { MovieDetailData } from "@shared/types/movie";
+import { formatStats } from "@pages/movieDetail/utils/formatStats";
 
 interface Props {
   movie: MovieDetailData;
 }
 
 function MovieInfo({ movie }: Props) {
-  const stats = [
-    { label: "평점", value: `${movie.voteAverage} / 10` },
-    { label: "투표 수", value: movie.voteCount.toLocaleString() },
-    {
-      label: "상영 시간",
-      value: `${Math.floor(movie.runtime / 60)}시간 ${movie.runtime % 60}분`,
-    },
-    { label: "상태", value: movie.status },
-  ];
+  const stats = formatStats(movie);
 
   return (
     <div className="bg-white border border-primary-200 rounded-xl p-5 mb-4">
@@ -23,7 +16,7 @@ function MovieInfo({ movie }: Props) {
         <img
           src={movie.posterUrl}
           alt={movie.title}
-          className="w-28 rounded-lg object-cover flex-shrink-0"
+          className="w-28 rounded-lg object-cover shrink-0"
         />
         <div className="flex-1 min-w-0">
           <p className="caption1 text-earth-400 mb-1">{movie.releaseDate}</p>
