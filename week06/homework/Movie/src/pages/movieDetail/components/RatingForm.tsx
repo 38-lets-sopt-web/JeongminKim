@@ -6,7 +6,7 @@ interface Props {
 }
 
 function RatingForm({ movieId }: Props) {
-  const { input, setInput, saved, message, handleSave, handleDelete } = useRating(movieId);
+  const { input, setInput, saved, message, isLoading, handleSave, handleDelete } = useRating(movieId);
 
   return (
     <div className="bg-white border border-primary-200 rounded-xl p-5">
@@ -30,14 +30,16 @@ function RatingForm({ movieId }: Props) {
           color="primary"
           size="md"
           onClick={handleSave}
-          label={"별점 저장"}
+          label={isLoading ? "저장 중..." : "별점 저장"}
+          isDisabled={isLoading}
         />
         {saved !== null && (
           <Button
             color="outline"
             size="md"
             onClick={handleDelete}
-            label={"별점 삭제하기"}
+            label={isLoading ? "삭제 중..." : "별점 삭제하기"}
+            isDisabled={isLoading}
           />
         )}
       </div>
